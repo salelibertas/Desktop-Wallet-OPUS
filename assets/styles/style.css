@@ -1,0 +1,489 @@
+html {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* hide / show the body when the loader is finished */
+
+body>.inner {
+  display: none;
+}
+
+body.pg-loaded>.inner {
+  display: block;
+}
+
+/* Style the sidebar - fixed full height */
+
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+
+/* Style sidebar links */
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+}
+
+/* Style links on mouse-over */
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar a span:focus {
+  outline: none;
+  color: #f1f1f1;
+}
+
+#peerCount {
+  bottom: 0;
+  height: 20px;
+  color: #aaa;
+  position: absolute;
+  font-size: 0.8em;
+  padding-left: 5px;
+}
+
+#syncProgress {
+  height: 20px;
+  position: fixed;
+  z-index: 1;
+  left: 120px;
+  right: 0;
+  bottom: 0;
+  background-color: #111;
+  border-top: 1px solid #111;
+}
+
+#mainContent {
+  position: fixed;
+  z-index: 1;
+  left: 160px;
+  top: 0;
+  right: 0;
+  bottom: 20px;
+  background-color: #212529;
+}
+
+/* Style the main content */
+
+.main {
+  margin-left: 160px;
+  /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}
+
+.sidebarIcon {
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+
+.sidebarIconWrapper {
+  width: 100%;
+  height: 80px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#sumBalance {
+  float: right;
+  line-height: 38px;
+  margin-right: 10px;
+}
+
+.modalBody {
+  margin: 20px;
+  color: #333;
+}
+
+#dlgGeneralError .modalBody {
+  height: 100px;
+}
+
+#dlgGeneralConfirm .modalBody {
+  height: 100px;
+}
+
+#dlgDeleteAddressConfirm .modalBody {
+  height: 100px;
+}
+
+#dlgShowAddressQRCode .modalBody {
+  height: 300px;
+}
+
+#dlgAboutInfo .modalBody {
+  height: 180px;
+}
+
+#dlgCreateWalletPassword .modalBody,
+#dlgCreateAddressAndName .modalBody {
+  height: 200px;
+}
+
+#dlgSendWalletPassword .modalBody {
+  height: 300px;
+}
+
+#dlgAddAddressToBook .modalBody,
+#dlgChangeWalletName .modalBody,
+#dlgChangeAddressName .modalBody,
+#dlgImportFromPrivateKey .modalBody {
+  height: 300px;
+}
+
+#dlgAddressListBody {
+  margin: 0px;
+  padding: 20px;
+  background-color: #333;
+}
+
+#dlgAddressList .modalBody {
+  color: #aaa;
+}
+
+.btn-dialog-confirm {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.btn-dialog-cancel {
+  position: absolute;
+  bottom: 10px;
+  right: 80px;
+}
+
+.modalDialog {
+  display: none;
+  border-bottom: 3px solid #1721b2 !important;
+  border-radius: 0px !important;
+}
+
+.iziModal-header {
+  background: rgba(57, 100, 208, 1);
+  background: -moz-linear-gradient(left, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0, rgba(57, 100, 208, 1)), color-stop(100%, rgba(45, 193, 201, 1)));
+  background: -webkit-linear-gradient(left, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%);
+  background: -o-linear-gradient(left, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%);
+  background: linear-gradient(to right, rgba(57, 100, 208, 1) 0, rgba(45, 193, 201, 1) 100%) !important;
+  border: 1px solid #3964d0 !important;
+}
+
+#walletsToolbar {
+  padding: 10px;
+  border-bottom: 1px solid #111;
+  border-radius: 0px;
+  height: 60px;
+}
+
+#transactionsWrapper {
+  color: #aaa;
+  padding-top: 10px;
+}
+
+div.iconSelected {
+  background-color: ivory;
+  border: 1px solid slategray;
+}
+
+div.loadingText {
+  color: #aaa;
+  margin-top: 50px;
+}
+
+#tableTransactionsForAll_wrapper .dataTables_scroll {
+  font-size: 0.9em;
+}
+
+div.sidebar svg {
+  color: #1b87d4;
+  margin-right: 10px;
+}
+
+#tableTransactionsForAll_filter {
+  color: #aaa;
+  padding-right: 10px;
+}
+
+#tableTransactionsForAll_filter label {
+  color: #aaa;
+  font-size: 1em;
+}
+
+#tableTransactionsForAll_filter input {
+  width: 400px;
+  color: #aaa;
+  padding: 12px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 2.5em;
+  box-sizing: border-box;
+}
+
+.floatThead-container {
+  background-color: #212529;
+}
+
+.dataTables_scrollBody .transactionsBlockNum {
+  color: #4424f9;
+}
+
+.sendWrapper,
+.settingsWrapper {
+  padding: 30px;
+}
+
+#sendMaxAmmount {
+  margin-right: 5px;
+}
+
+#btnSendAll {
+  margin-left: 10px;
+}
+
+#addressList {
+  overflow-y: auto;
+  height: calc(100vh - 80px);
+}
+
+#addressList .colEdit {
+  padding-left: 20px;
+}
+
+#addressList th {
+  color: #ccc;
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+.sendTXInfo {
+  height: 30px;
+}
+
+.sendTXInfo label {
+  line-height: 30px;
+  font-size: 1em;
+}
+
+.sendTXdivider {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#addrQRCode {
+  text-align: center;
+}
+
+#fromAddressInfo,
+#toAddressInfo,
+#valueToSendInfo,
+#feeToPayInfo {
+  color: rgb(30, 12, 184);
+  /* margin-left: 5px; */
+  margin-right: 5px;
+}
+
+.accountName {
+  color: rgb(30, 13, 182);
+}
+
+.accountAddr {
+  font-size: 0.8em;
+}
+
+.pg-loading-screen .pg-loading-html {
+  margin-top: 0px;
+}
+
+.fromAddressSelect .dropdown-content {
+  width: 600px !important;
+}
+
+.loadingOverlay {
+  background-color: #212529;
+  display: none;
+  position: fixed;
+  left: 160px;
+  right: 0;
+  bottom: 20px;
+  top: 0;
+}
+
+.loadingOverlay .loadingWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loadingTextTransactions {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+.spinner .bounce {
+  background-color: #aaa;
+}
+
+.sumDollars,
+.sumBalance,
+.sumCurrency {
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.cleanText {
+  margin-left: 10px;
+}
+
+.cleanWrapper {
+  margin: 10px;
+}
+
+#noWalletsPresent,
+#noAddressPresent {
+  font-size: 1.3em;
+}
+
+div.noWalletsWrapper,
+div.noAddressWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textAddress {
+  cursor: pointer;
+}
+
+.addressInputWrapper {
+  display: flex;
+}
+
+#addressToolbar {
+  display: flex;
+}
+
+#addressListFilter {
+  color: #aaa;
+}
+
+.btnSendToolButton {
+  width: 40px;
+  padding: 0px;
+}
+
+#btnAddToAddressBook {
+  margin-right: 3px;
+}
+
+.infoText {
+  margin: 3px;
+}
+
+#aboutInfoWallet {
+  font-size: 1.5em;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+#sendFromAddressName,
+#sendToAddressName {
+  font-size: 95%;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.dropdown,
+.dropup {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+  box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #57a8e2;
+  -webkit-box-shadow: 0 1px 0 0 #57a8e2;
+  box-shadow: 0 1px 0 0 #57a8e2;
+}
+
+label {
+  color: #57a8e2 !important;
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #57a8e2;
+}

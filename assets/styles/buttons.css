@@ -1,0 +1,57 @@
+.btn-etho {
+    color: #ffffff;
+     background: rgba(57,100,208,1);
+      background: -moz-linear-gradient(left,rgba(57,100,208,1) 0,rgba(45,193,201,1) 100%);
+      background: -webkit-gradient(left top,right top,color-stop(0,rgba(57,100,208,1)),color-stop(100%,rgba(45,193,201,1)));
+      background: -webkit-linear-gradient(left,rgba(57,100,208,1) 0,rgba(45,193,201,1) 100%);
+      background: -o-linear-gradient(left,rgba(57,100,208,1) 0,rgba(45,193,201,1) 100%);
+      background: -ms-linear-gradient(left,rgba(57,100,208,1) 0,rgba(45,193,201,1) 100%);
+      background: linear-gradient(to right,rgba(57,100,208,1) 0,rgba(45,193,201,1) 100%) !important; 
+    border: 1px solid #3964d0 !important;
+  }
+
+  .btn-etho:hover,
+  .btn-etho:focus,
+  .btn-etho:active,
+  .btn-etho.active,
+  .open .dropdown-toggle.btn-etho {
+    color: #ffffff;
+     background: rgba(45,193,201,1);
+    background: -moz-linear-gradient(left, rgba(45,193,201,1) 0%, rgba(57,100,208,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(45,193,201,1)), color-stop(100%, rgba(57,100,208,1)));
+    background: -webkit-linear-gradient(left, rgba(45,193,201,1) 0%, rgba(57,100,208,1) 100%);
+    background: -o-linear-gradient(left, rgba(45,193,201,1) 0%, rgba(57,100,208,1) 100%);
+    background: -ms-linear-gradient(left, rgba(45,193,201,1) 0%, rgba(57,100,208,1) 100%);
+    background: linear-gradient(to right, rgba(45,193,201,1) 0%, rgba(57,100,208,1) 100%) !important; 
+  border: 1px solid #3964d0 !important; 
+  }
+
+  /*.btn-etho:active,
+  .btn-etho.active,
+  .open .dropdown-toggle.btn-etho {
+    background-image: none;
+  }*/
+
+  .btn-etho.disabled,
+  .btn-etho[disabled],
+  fieldset[disabled] .btn-etho,
+  .btn-etho.disabled:hover,
+  .btn-etho[disabled]:hover,
+  fieldset[disabled] .btn-etho:hover,
+  .btn-etho.disabled:focus,
+  .btn-etho[disabled]:focus,
+  fieldset[disabled] .btn-etho:focus,
+  .btn-etho.disabled:active,
+  .btn-etho[disabled]:active,
+  fieldset[disabled] .btn-etho:active,
+  .btn-etho.disabled.active,
+  .btn-etho[disabled].active,
+  fieldset[disabled] .btn-etho.active {
+    background-color: #121b7a;
+    border-color: #121b7a;
+  }
+
+  .btn-etho .badge {
+    color: #121b7a;
+    background-color: #ffffff;
+  }
